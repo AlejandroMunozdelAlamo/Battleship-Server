@@ -2,28 +2,28 @@
 # -*- encoding: UTF-8 -*-
 
 # Battleship Game Server
-# Abel Castilla Rodríguez, Alejandro Muñoz Del �?lamo, Damián Nimo Járquez
-# Copyright © 2016
+# Abel Castilla RodrÃ­guez, Alejandro MuÃ±oz Del Ã?lamo, DamiÃ¡n Nimo JÃ¡rquez
+# Copyright Â© 2016
 
 
 
 # ---------------------------------------1. Bibliotecas---------------------------------------
-# Librerías para la comunicación TCP/IP
+# LibrerÃ­as para la comunicaciÃ³n TCP/IP
 import socket 
 import sys
 import tweepy
 import os
 # ---------------------------------------2. Funciones---------------------------------------
 
-# 2.1 - Establecer comunicación cliente - servidor
+# 2.1 - Establecer comunicaciÃ³n cliente - servidor
 
 def begin_comm():	
 
 	# Paso 0 - Identificar nuestro usuario en Twitter
-	consumer_key='2EtiJK3cvO2fcS1S2V7eynebC'
-	consumer_secret='VSlhvNlGaweuT1s2tgVCrpCvdovxk83hlYFScxW7ooYvMPCOKn'
-	access_token='2324185926-sfZHWUetP1oy4ryrE0V2k7G7xBpkcPLf9Q8e1gm'
-	access_token_secret='ASaiJnIfIGMgiTFiQoeTRAnJWb9MIzG0uZ7P0iOjzyOts'
+	consumer_key='Introducir consumer_key'
+	consumer_secret='Introducir consumer_secret'
+	access_token='Introducir access_token'
+	access_token_secret='Introducir access_token_secret'
 
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
@@ -33,10 +33,10 @@ def begin_comm():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)	
 
 	# Paso 2 - Enlazamos el socket a un puerto
-	server_address = ('localhost', 10000)		# Creamos una variable server_address con la dirección IP y el puerto que vamos a asignar al servidor
-	print >> sys.stdout, 'Montando el servidor %s con puerto %s' % server_address	# Mostramos por pantalla dicha información
-	sock.bind(server_address)														# Enlazamos el socket con la información anterior
-	print >> sys.stdout, 'Servidor en funcionamiento'								# Mostramos en la consola que el servidor está en funcionamiento
+	server_address = ('localhost', 10000)		# Creamos una variable server_address con la direcciÃ³n IP y el puerto que vamos a asignar al servidor
+	print >> sys.stdout, 'Montando el servidor %s con puerto %s' % server_address	# Mostramos por pantalla dicha informaciÃ³n
+	sock.bind(server_address)														# Enlazamos el socket con la informaciÃ³n anterior
+	print >> sys.stdout, 'Servidor en funcionamiento'								# Mostramos en la consola que el servidor estÃ¡ en funcionamiento
 	sock.listen(1)
 	#api.update_status(status='Partida inicializada')
 	global cadena 
@@ -46,7 +46,7 @@ def begin_comm():
 		try:
 			print >> sys.stdout, 'Esperando al oponente'	
 			connection, client_address = sock.accept()
-			print >> sys.stderr, 'Conectamos con el cliente', client_address 	# Indicamos con qué cliente comienza la partida
+			print >> sys.stderr, 'Conectamos con el cliente', client_address 	# Indicamos con quÃ© cliente comienza la partida
 			partida = True	# Creamos una bandera para conocer el estado de la partida					
 			while partida == True:						# Mientras la bandera indique que la partida sigue activa
 				option
@@ -65,7 +65,7 @@ def begin_comm():
 				del option
 
    		finally:
-			connection.close()	# Cerramos la conexión
+			connection.close()	# Cerramos la conexiÃ³n
 
 
 	# 2.2 -  Ubicar disparo
