@@ -2,13 +2,13 @@
 # -*- encoding: UTF-8 -*-
 
 # Battleship Game Server
-# Abel Castilla Rodríguez, Alejandro Muñoz Del �?lamo, Damián Nimo Járquez
-# Copyright © 2016
+# Abel Castilla RodrÃ­guez, Alejandro MuÃ±oz Del Ã?lamo, DamiÃ¡n Nimo JÃ¡rquez
+# Copyright Â© 2016
 
 
 
 # ---------------------------------------1. Bibliotecas---------------------------------------
-# Librerías para la comunicación TCP/IP
+# LibrerÃ­as para la comunicaciÃ³n TCP/IP
 import socket 
 import sys
 import tweepy
@@ -17,7 +17,7 @@ import time
 
 # ---------------------------------------2. Funciones---------------------------------------
 
-# 2.1 - Establecer comunicación cliente - servidor
+# 2.1 - Establecer comunicaciÃ³n cliente - servidor
 
 def begin_comm():	
 
@@ -36,10 +36,10 @@ def begin_comm():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)	
 
 	# Paso 2 - Enlazamos el socket a un puerto
-	server_address = ('localhost', 10000)		# Creamos una variable server_address con la dirección IP y el puerto que vamos a asignar al servidor
-	print >> sys.stdout, 'Montando el servidor %s con puerto %s' % server_address	# Mostramos por pantalla dicha información
-	sock.bind(server_address)														# Enlazamos el socket con la información anterior
-	print >> sys.stdout, 'Servidor en funcionamiento'								# Mostramos en la consola que el servidor está en funcionamiento
+	server_address = ('localhost', 10000)		# Creamos una variable server_address con la direcciÃ³n IP y el puerto que vamos a asignar al servidor
+	print >> sys.stdout, 'Montando el servidor %s con puerto %s' % server_address	# Mostramos por pantalla dicha informaciÃ³n
+	sock.bind(server_address)														# Enlazamos el socket con la informaciÃ³n anterior
+	print >> sys.stdout, 'Servidor en funcionamiento'								# Mostramos en la consola que el servidor estÃ¡ en funcionamiento
 	sock.listen(1)
 	api.update_status(status='Partida inicializada a las '+(time.strftime("%H:%M:%S")))
 	global cadena 
@@ -48,7 +48,7 @@ def begin_comm():
 		try:
 			print >> sys.stdout, 'Esperando al oponente'	
 			connection, client_address = sock.accept()
-			print >> sys.stderr, 'Conectamos con el cliente', client_address 	# Indicamos con qué cliente comienza la partida
+			print >> sys.stderr, 'Conectamos con el cliente', client_address 	# Indicamos con quÃ© cliente comienza la partida
 			partida = True	# Creamos una bandera para conocer el estado de la partida 						
 									# Creamos una variable para controlar el turno
 			# while (partida == True):						# Mientras la bandera indique que la partida sigue activa
@@ -56,7 +56,7 @@ def begin_comm():
 			print option
 			if (option == 'fin'):
 				partida = False 
-				print 'ENTRO POR DONDE NO ES'
+				print 'Fin de la partida'
 				api.update_status(status='Partida Finalizada a las' + (time.strftime("%H:%M:%S")))
 			elif (option == "actualiza"):
 				mostrar(api)
@@ -66,7 +66,7 @@ def begin_comm():
 				print 'entro en disparo'
    		finally:
    			if (partida == False):
-				connection.close()	# Cerramos la conexión
+				connection.close()	# Cerramos la conexiÃ³n
 				break
 
 
