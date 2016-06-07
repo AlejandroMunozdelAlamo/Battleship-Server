@@ -22,10 +22,10 @@ import time
 def begin_comm():	
 
 	# Paso 0 - Identificar nuestro usuario en Twitter
-	consumer_key='4zfod1mtVenCNLCSgzhT0xwDo'
-	consumer_secret='MBiddLBS3XWzbX3M34AkcbFi9hvjznp0Lsl5xCDd5eNsH8vXug'
-	access_token='709277264123469824-90KqXm5uXE01YnHC32A9snX6ULf1tDC'
-	access_token_secret='e8tjKhQimZaQNtFknsEdPZHPJQLSLsIK4bU6CoxEdsF2i'
+	consumer_key='Introducir consumer_key'
+	consumer_secret='Introducir consumer_secret'
+	access_token='Introducir access_token'
+	access_token_secret='Introducir access_token_secret'
 
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
