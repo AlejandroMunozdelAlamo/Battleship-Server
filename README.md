@@ -10,7 +10,7 @@ Battship-server.py
   - Realiza la identificación del usuario en Twitter para la transmisión de datos por la red social
   - Identifica las acciones realizadas por los jugadores, y realiza la actualización del sistema según las mismas
   - Cierra la conexión cuando se finaliza la partida
-  - 
+  
 Posibles mejoras:
 
   - Realizar un servidor activo de manera que el servidor quede en escucha tras finalizar la partida
